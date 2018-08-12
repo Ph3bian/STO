@@ -372,8 +372,18 @@ p.display-name{margin: .4rem}
     border-left:2px solid #dddddd;
 } */
 .profile-link{cursor: pointer;}
-.inliner{display:inline-block}
+.inliner{display:inline-flex}
 .avatar{width: 130px;height: 130px;border-radius:50%;overflow:hidden}
 .avatar-image{width:100%; max-width: 100%;}
 .social-row{vertical-align: baseline;   margin: 5px 0 0;}
-.question-text{font-size: 1.25rem}
+.question-text{font-size: 1.25rem}.hide{display:none;}
+.tab-item {
+    display: none;
+    padding: 5px 10px;
+    border-top: none;
+}
+.tab .tablinks{
+   padding: 10px;
+
+}
+.tab .tablinks.active{border-bottom: 2px solid #38d39e;}

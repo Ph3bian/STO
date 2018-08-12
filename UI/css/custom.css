@@ -54,7 +54,7 @@ body {
     /* 0 10px 40px -14px rgba(0, 0, 0, 0.25); */
 }
 
-h1, h2, h3, h4, h5, h6, a.logo-text, a.nav-item, input[type=submit],button.search-button, footer, .primary-btn {
+h1, h2, h3, h4, h5, h6, a.logo-text, a.nav-item, input[type=submit],button.search-button, footer, .primary-btn, .btn-post {
     font-family: 'Julius Sans One', sans-serif;
 }
 .form-content ,.wrapper,.list-group,.answer-list,.aside-1, .aside-2  {
@@ -119,7 +119,7 @@ input#search {
     border-bottom-left-radius: 4px;
 }
 
-button.search-button, .primary-btn {
+button.search-button, .primary-btn, .btn-post {
     height: 40px;
     border:none;
     border-radius:4px;
@@ -130,12 +130,14 @@ button.search-button, .primary-btn {
     font-weight: 800;
 
 }
+
 .primary-btn{ width: 100%;}
 button.search-button{   width: 86px;}
-button.search-button:focus,button.search-button:hover, .primary-btn:hover,.primary-btn:focus{
+button.search-button:focus,button.search-button:hover, .primary-btn:hover,.primary-btn:focus, .btn-post:focus,.btn-post:hover {
     background: #ffffff; color:#38d39e;
     border: 2px solid #38d39e;
 }
+.btn-post{width:200px;float:right;}
 .form-header {
     border-bottom: 2px solid #38d39e;
     margin-bottom: 2rem;
@@ -167,6 +169,7 @@ nav {
 
 nav .headernav .nav-icon {
     display: none;
+    color:#38d39e;font-size:20px;
 }
 
 a.nav-item {

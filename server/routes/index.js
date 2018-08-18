@@ -12,4 +12,22 @@ router.get('/questions', (req, res) => {
     });
 });
 
+router.get('/questions/:id', (req, res) => {
+    // get the id
+    let { id } = req.params;
+
+    id = parseInt(id, 10);
+    // find the question with this id from the database (questions array)
+    const finder = currentQuestion => currentQuestion.id === id;
+    const question = questions.find(finder);
+    // return question or a 404
+    if (question) {
+        return res.json({
+            status: 'success',
+            data: {
+                question,
+            },
+        });
+    }
+});
 export default router;

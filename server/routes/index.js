@@ -29,5 +29,13 @@ router.get('/questions/:id', (req, res) => {
             },
         });
     }
+
+    return res.status(404).json({
+        status: 'fail',
+        data: {
+          message: 'Question not found.',
+        },
+      });
 });
+
 export default router;

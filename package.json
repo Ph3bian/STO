@@ -6,7 +6,7 @@
   "scripts": {
     "test": "nyc --reporter=html --reporter=text mocha server/test/test.js --compilers js:babel-core/register --exit",
     "start:dev": "babel-watch server/index.js",
-    "build": "babel -d dist server/index.js",
+    "build": "babel -d dist server/",
     "start": "node dist/index.js",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "heroku-postbuild": "npm run build"

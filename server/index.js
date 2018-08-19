@@ -5,7 +5,7 @@ import router from './routes';
 const app = express();
 
 app.use(parsed.json());
-//versioning
+// versioning
 app.use('/api/v1', router);
 
 app.listen(process.env.PORT || 3400);

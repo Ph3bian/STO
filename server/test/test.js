@@ -61,13 +61,10 @@ describe('the POST /questions/:id/answers api endpoint', () => {
             userId: 23232,
         };
         const response = await request(app).post('/api/v1/questions/501233/answers').send(payload);
-
         assert.equal(response.body.status, 'success');
         assert.ok(response.body.data.question.id);
         assert.equal(response.body.data.question.title, payload.title);
         assert.equal(response.body.data.question.userId, payload.userId);
         assert.equal(response.body.data.question.description, payload.description);
-    
-
     });
 });

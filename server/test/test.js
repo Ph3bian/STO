@@ -39,32 +39,30 @@ describe('the POST /questions api endpoint', () => {
             description: 'new question description',
             userId: 23232,
         };
-        const response = await request(app).post('/api/v1/questions').send(payload);
-
-
-        assert.equal(response.body.status, 'success');
-        assert.ok(response.body.data.question.id);
-        assert.equal(response.body.data.question.title, payload.title);
-        assert.equal(response.body.data.question.userId, payload.userId);
-        assert.equal(response.body.data.question.description, payload.description);
-        assert.equal(questions.length, dbCount + 1)
+        const {body} = await request(app).post('/api/v1/questions').send(payload);
+        const {status, data } = body
+        assert.equal(status, 'success');
+        assert.ok(data.question.id);
+        assert.equal(data.question.title, payload.title);
+        assert.equal(data.question.userId, payload.userId);
+        assert.equal(data.question.description, payload.description);
 
     });
 });
 
 describe('the POST /questions/:id/answers api endpoint', () => {
     it('returns a newly created answer', async () => {
-   
         const payload = {
             title: 'New question title',
             description: 'new question description',
             userId: 23232,
         };
-        const response = await request(app).post('/api/v1/questions/501233/answers').send(payload);
-        assert.equal(response.body.status, 'success');
-        assert.ok(response.body.data.question.id);
-        assert.equal(response.body.data.question.title, payload.title);
-        assert.equal(response.body.data.question.userId, payload.userId);
-        assert.equal(response.body.data.question.description, payload.description);
+        const {body} = await request(app).post('/api/v1/questions/501233/answers').send(payload);
+        const {status, data } = body
+        assert.equal(status, 'success');
+        assert.ok(data.question.id);
+        assert.equal(data.question.title, payload.title);
+        assert.equal(data.question.userId, payload.userId);
+        assert.equal(data.question.description, payload.description);
     });
 });

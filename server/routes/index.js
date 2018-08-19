@@ -67,11 +67,11 @@ router.post('/questions/:questionId/answers', (req, res) => {
   // TODO: check if the data required is provided
   // TODO: increase question answered repliesCount
   const { questionId } = req.params;
-  const { description, userId } = req.body;
+  const { content, userId } = req.body;
   const question = {
     id: parseInt((Math.random() * 10000).toFixed(), 10),
     questionId,
-    description,
+    content,
     userId,
     repliesCount: 0,
     created_at: new Date(),

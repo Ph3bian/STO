@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import questions from '../database/questions';
+import answers from '../database/answers';
 
 const router = new Router();
 
@@ -68,7 +69,7 @@ router.post('/questions/:questionId/answers', (req, res) => {
   // TODO: increase question answered repliesCount
   const { questionId } = req.params;
   const { content, userId } = req.body;
-  const question = {
+  const answer = {
     id: parseInt((Math.random() * 10000).toFixed(), 10),
     questionId,
     content,
@@ -77,12 +78,12 @@ router.post('/questions/:questionId/answers', (req, res) => {
     created_at: new Date(),
   };
 
-  questions.push(question);
 
+  answers.push(answer);
   return res.json({
     status: 'success',
     data: {
-      question,
+      answer,
     },
   });
 });

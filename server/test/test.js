@@ -53,8 +53,8 @@ describe('the POST /questions/:id/answers api endpoint', () => {
     const { body } = await request(app).post('/api/v1/questions/501233/answers').send(payload);
     const { status, data } = body;
     assert.equal(status, 'success');
-    assert.equal(data.question.questionId, 501233);
-    assert.equal(data.question.userId, payload.userId);
-    assert.equal(data.question.content, payload.content);
+    assert.equal(data.answer.questionId, 501233);
+    assert.equal(data.answer.userId, payload.userId);
+    assert.equal(data.answer.content, payload.content);
   });
 });

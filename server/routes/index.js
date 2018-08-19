@@ -68,7 +68,7 @@ router.post('/questions/:questionId/answers', (req, res) => {
   // TODO: increase question answered repliesCount
   const { questionId } = req.params;
   const { content, userId } = req.body;
-  const question = {
+  const answer = {
     id: parseInt((Math.random() * 10000).toFixed(), 10),
     questionId,
     content,
@@ -77,12 +77,12 @@ router.post('/questions/:questionId/answers', (req, res) => {
     created_at: new Date(),
   };
 
-  questions.push(question);
+  questions.push(answer);
 
   return res.json({
     status: 'success',
     data: {
-      question,
+      answer,
     },
   });
 });

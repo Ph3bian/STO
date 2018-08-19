@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import questions from '../database/questions';
+import answers from '../database/answers';
 
 const router = new Router();
 
@@ -77,8 +78,8 @@ router.post('/questions/:questionId/answers', (req, res) => {
     created_at: new Date(),
   };
 
-  questions.push(answer);
 
+  answers.push(answer);
   return res.json({
     status: 'success',
     data: {

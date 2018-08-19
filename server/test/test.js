@@ -46,15 +46,14 @@ describe('the POST /questions api endpoint', () => {
 describe('the POST /questions/:id/answers api endpoint', () => {
   it('returns a newly created answer', async () => {
     const payload = {
-      title: 'New question title',
       description: 'new question description',
       userId: 23232,
+      questionId: 501233,
     };
     const { body } = await request(app).post('/api/v1/questions/501233/answers').send(payload);
     const { status, data } = body;
     assert.equal(status, 'success');
-    assert.ok(data.question.id);
-    assert.equal(data.question.title, payload.title);
+    assert.equal(data.question.questionId, 501233);
     assert.equal(data.question.userId, payload.userId);
     assert.equal(data.question.description, payload.description);
   });

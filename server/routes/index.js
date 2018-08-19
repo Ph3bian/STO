@@ -62,13 +62,15 @@ router.post('/questions', (req, res) => {
   });
 });
 
-router.post('/questions/:id/answers', (req, res) => {
-  // TODO: check if the data required is provided
-  const { title, description, userId } = req.body;
 
+router.post('/questions/:questionId/answers', (req, res) => {
+  // TODO: check if the data required is provided
+  // TODO: increase question answered repliesCount
+  const { questionId } = req.params;
+  const { description, userId } = req.body;
   const question = {
     id: parseInt((Math.random() * 10000).toFixed(), 10),
-    title,
+    questionId,
     description,
     userId,
     repliesCount: 0,

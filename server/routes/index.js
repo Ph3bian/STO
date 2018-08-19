@@ -41,7 +41,6 @@ router.get('/questions/:id', (req, res) => {
 router.post('/questions', (req, res) => {
     // TODO: check if the data required was provided.
     const { title, description, userId } = req.body;
-
     const question = {
         id: parseInt((Math.random() * 10000).toFixed(), 10),
         title,

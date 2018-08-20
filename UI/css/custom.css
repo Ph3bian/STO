@@ -246,10 +246,10 @@ header{
 }
 .aside-1, .aside-2 {
     background: #fcfcfc;
-    height:18rem;
+    height:23rem;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    /* text-align: center; */
  
   }
 @media all and (min-width: 600px) {
@@ -303,12 +303,12 @@ ul {
     padding: 0;
     margin: 0;
   }
- a.answer-list{
+ .answer-list{
     border: 1px solid #ddd;
     margin-top: -1px;
     background-color: #fcfcfc; 
   }
-a.answer-list:hover{
+.answer-list:hover{
     color: #333333;
     background-color: #f2f2f2;  
 }
@@ -337,7 +337,7 @@ a.answer-list:hover{
 .profile-stat.table-row{
     padding: 16px;
 }
-.profile {
+.profile {text-align: center;
     padding: 0 16px;}
 .profile-stat {
     box-sizing: border-box;
@@ -387,3 +387,4 @@ p.display-name{margin: .4rem}
 
 }
 .tab .tablinks.active{border-bottom: 2px solid #38d39e;}
+form label .question{text-align: left} 
